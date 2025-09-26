@@ -39,6 +39,8 @@ body{
     align-content: center;
     grid-template-rows: 30% 70%;
     padding: 5px 25px;
+    box-shadow: 0px 0px 5px 0px black;
+    z-index: 1;
 }
 
 .sidebar{
@@ -48,15 +50,17 @@ body{
 
     background-color: var(--primary-color);
     color: var(--background-color-secondary);
-    
+    z-index: 2;
 }
 
 .content{
     display: grid;
     grid-column: 2/3;
     grid-row: 2/3;
-
+    padding: 16px;
     background-color: var(--background-color-main);
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 100%;
 }
 
 .navbar{
@@ -64,6 +68,7 @@ body{
     grid-template-columns: 60% 40%;
     grid-template-rows: 100%;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .search{
@@ -72,7 +77,11 @@ body{
     grid-template-rows: 1fr;
     column-gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+}
+
+.search img{
+    justify-self: start;
 }
 
 .profile-mini{
@@ -141,3 +150,78 @@ form input{
     border-radius: 16px;
     font-weight: 700;
 }
+
+.projects{
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    row-gap: 30px;
+    column-gap: 15px;
+}
+
+.projects .card{
+    background-color: var(--background-color-secondary);
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+    height: 180px;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-shadow: 0px 2px 3px 0px black;
+}
+
+.toolbar{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40px 1fr 40px 1fr;
+    row-gap: 8px;
+    margin: 8px;
+    align-content: center;
+}
+
+.projects .card h1, .announcements .card h1, .trends .card h1{
+    font-size: 1.3rem;
+}
+
+.projects .card p, .announcements .card p{
+    font-size: 1rem;
+}
+
+.buttons{
+    align-self: end;
+    justify-self: end;
+}
+
+.buttons button{
+    background: var(--background-color-secondary);
+}
+
+.announcements, .trends{
+    background-color: var(--background-color-secondary);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.announcements .card, .trends .card{
+    border-bottom: 1px solid black;
+    padding: 8px;
+}
+
+
+.announcements .card:last-child, .trends .card:last-child{
+    border-bottom: none;
+}
+
+.trends .card{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    column-gap: 10px;
+}
+
+.trends .card img{
+    width: 50px;
+    height: 50px;
+}
+
+
